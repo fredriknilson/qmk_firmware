@@ -16,19 +16,20 @@
 
 #pragma once
 
-#ifdef RGBLIGHT_ENABLE
-#    define RGBLIGHT_ANIMATIONS
-#    define RGBLIGHT_HUE_STEP  8
-#    define RGBLIGHT_SAT_STEP  8
-#    define RGBLIGHT_VAL_STEP  8
-#    define RGBLIGHT_LIMIT_VAL 150
-#endif
-
-// Lets you roll mod-tap keys
-#define IGNORE_MOD_TAP_INTERRUPT
-
 #undef TAPPING_TOGGLE
 #define TAPPING_TOGGLE 2
 
-#define ONESHOT_TAP_TOGGLE 2  /* Tapping this number of times holds the key until tapped once again. */
-#define ONESHOT_TIMEOUT 5000  /* Time (in ms) before the one shot key is released */
+// Tapping this number of times holds the key until tapped once again.
+#define ONESHOT_TAP_TOGGLE 2
+
+// Time (in ms) before the one shot key is released
+#define ONESHOT_TIMEOUT 5000
+
+// Configure the global tapping term (default: 200ms)
+#define TAPPING_TERM 200
+
+// Prevent normal rollover on alphas from accidentally triggering mods.
+#define IGNORE_MOD_TAP_INTERRUPT
+
+// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
+#define TAPPING_FORCE_HOLD
